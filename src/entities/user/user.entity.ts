@@ -5,7 +5,8 @@ import {
   PrimaryGeneratedColumn,
   OneToMany,
 } from "typeorm";
-//import { Exclude } from "class-transformer";
+import { Contact } from "../contacts/contacts.entity";
+import { Exclude } from "class-transformer";
 
 @Entity("user")
 export class User {
@@ -19,7 +20,7 @@ export class User {
   email: string;
 
   @Column()
-  //@Exclude()
+  @Exclude()
   password: string;
 
   @Column()
@@ -28,6 +29,6 @@ export class User {
   @CreateDateColumn()
   created_at: Date;
 
-  //@OneToMany(() => Contacts, (contacts) => contacts.user, { eager: true })
-  //contacts: Contacts[];
+  @OneToMany(() => Contact, (contacts) => contacts.user, { eager: true })
+  contacts: Contact[];
 }
