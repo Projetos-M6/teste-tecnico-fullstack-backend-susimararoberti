@@ -11,10 +11,10 @@ const loginService = async ({ email, password }: IUserLogin) => {
   const user = await userRepository.find();
   const account = user.find((user) => user.email === email);
   if (!account) {
-    throw new AppError(403, "Wrong email/password");
+    throw new AppError(403, "Wrong email");
   }
   if (!bcrypt.compareSync(password, account.password)) {
-    throw new AppError(403, "Wrong email/password");
+    throw new AppError(403, "Wrong password");
   }
 
   const token = jwt.sign({ id: account.id }, process.env.SECRET_KEY as string, {
