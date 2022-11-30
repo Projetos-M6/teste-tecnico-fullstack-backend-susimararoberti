@@ -5,9 +5,7 @@ import { instanceToPlain } from "class-transformer";
 
 const contactCreateController = async (req: Request, resp: Response) => {
   try {
-    //mudar para req.user
-    const { id } = req.params;
-    const userId = id;
+    const userId = req.user.id;
     const { name, email, phone } = req.body;
     const contact = await contactCreateService({
       userId,

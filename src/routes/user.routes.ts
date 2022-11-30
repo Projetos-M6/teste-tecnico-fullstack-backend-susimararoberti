@@ -5,15 +5,15 @@ import userListController from "../controllers/user/userList.controller";
 import userUpdateController from "../controllers/user/userUpdate.controller";
 import userDeleteController from "../controllers/user/userDelete.controller";
 
-//falta middlewares
+import verifyAuthMiddleware from "../middlewares/verifyAuth.middleware";
 
 const routes = Router();
 
 export const userRoutes = () => {
-  routes.post("/", userCreateController);
-  routes.get("/:id", userListController);
-  routes.patch("/:id", userUpdateController);
-  routes.delete("/:id", userDeleteController);
+  routes.post("/register", userCreateController);
+  routes.get("", verifyAuthMiddleware, userListController);
+  routes.patch("/update", verifyAuthMiddleware, userUpdateController);
+  routes.delete("/delete", verifyAuthMiddleware, userDeleteController);
 
   return routes;
 };

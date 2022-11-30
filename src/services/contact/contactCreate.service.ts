@@ -13,20 +13,22 @@ const contactCreateService = async ({
   const contactRepository = AppDataSource.getRepository(Contact);
   const userRepository = AppDataSource.getRepository(User);
 
-  const user = await userRepository.findOneBy({ id: userId });
-  if (!user) {
+  const findUser = await userRepository.findOneBy({ id: userId });
+  if (!findUser) {
     throw new AppError(404, "User not found!");
   }
 
   const contact = contactRepository.create({
-    user,
+    user: findUser,
     name,
     email,
     phone,
   });
   await contactRepository.save(contact);
 
-  return contact;
+  const { user, ...rest } = contact;
+
+  return rest;
 };
 
 export default contactCreateService;

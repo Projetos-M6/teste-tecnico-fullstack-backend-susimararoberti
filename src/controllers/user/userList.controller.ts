@@ -5,7 +5,7 @@ import { instanceToPlain } from "class-transformer";
 
 const userListController = async (req: Request, resp: Response) => {
   try {
-    const { id } = req.params;
+    const id = req.user.id;
     const user = await userListService({ id });
 
     return resp.status(200).json(instanceToPlain(user));

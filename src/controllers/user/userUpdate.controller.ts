@@ -4,7 +4,7 @@ import { AppError, handleError } from "../../errors/appError";
 
 const userUpdateController = async (req: Request, resp: Response) => {
   try {
-    const { id } = req.params;
+    const id = req.user.id;
     const { name, email, password, phone } = req.body;
     const updateUser = await userUpdateService({
       name,
