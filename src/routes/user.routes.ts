@@ -1,9 +1,9 @@
 import { Router } from "express";
 
-import userCreateController from "../controllers/users/userCreate.controller";
-import userListController from "../controllers/users/userList.controller";
-import userUpdateController from "../controllers/users/userUpdate.controller";
-import userDeleteController from "../controllers/users/userDelete.controller";
+import userCreateController from "../controllers/user/userCreate.controller";
+import userListController from "../controllers/user/userList.controller";
+import userUpdateController from "../controllers/user/userUpdate.controller";
+import userDeleteController from "../controllers/user/userDelete.controller";
 
 //falta middlewares
 
