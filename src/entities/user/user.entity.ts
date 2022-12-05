@@ -29,6 +29,8 @@ export class User {
   @CreateDateColumn()
   created_at: Date;
 
-  @OneToMany(() => Contact, (contacts) => contacts.user, { eager: true })
+  @OneToMany(() => Contact, (contacts) => contacts.user, {
+    eager: true,
+  })
   contacts: Contact[];
 }

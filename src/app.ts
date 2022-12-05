@@ -1,10 +1,11 @@
 import express from "express";
 import { appRoutes } from "./routes";
-//importar middleware
+
+const cors = require("cors");
 
 const app = express();
+app.use(cors());
 app.use(express.json());
 appRoutes(app);
-//middleware
 
 export default app;
