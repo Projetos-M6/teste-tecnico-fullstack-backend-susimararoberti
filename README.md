@@ -23,6 +23,11 @@ O usuário poderá cadastrar contatos, editá-los e/ou excluí-los.
 
 - Verifique o arquivo .env.exemple para inserir as variáveis de ambiente corretas;
 - Note que aplicação está rodando em localhost!
+- Configure a DATABASE_URL seguindo o seguinte modelo:
+  > "postgres://user:password@localhost:5432/db" <br>
+  - Substitua user pelo seu usuário postgresql;
+  - Substitua password pela sua senha postgresql;
+  - Substitua db pelo nome do seu banco de dados local.
 
 ### 4 - Rode as migrações
 
