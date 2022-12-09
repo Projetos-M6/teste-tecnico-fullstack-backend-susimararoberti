@@ -41,3 +41,11 @@ O usuário poderá cadastrar contatos, editá-los e/ou excluí-los.
 
 - Utilize o comando `yarn dev` para rodar sua aplicação.
 - Após isso, então rode o frontend da aplicação -> leia seu README!
+
+### 7 - Rodar os testes
+
+- Essa aplicação possui testes de integração.
+- Utilize o comando `yarn test` para rodar todos os testes da aplicação;
+- Para rodar os testes de Login use o comando `yarn test src/tests/integration/login/loginRoutes.test.ts`;
+- Para rodar os testes de User use o comando `yarn test src/tests/integration/user/userRoutes.test.ts`;
+- Para rodar os testes de Contacts use o comando `yarn test src/tests/integration/contacts/contactsRoutes.test.ts`
